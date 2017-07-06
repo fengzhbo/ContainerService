@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CS.BasicInterface;
+using CS.MsgServiceDemo.Common;
+using CS.MsgServiceDemoDAL;
 
 namespace CS.MsgServiceDemo
 {
@@ -19,11 +21,15 @@ namespace CS.MsgServiceDemo
         private ILogger _logger;
         private INotifyer _notifyer;
 
+        private User _userDal;
+
         public MsgService(IDbHelper dbHelper, ILogger logger, INotifyer notifyer)
         {
             _dbHelper = dbHelper;
             _logger = logger;
             _notifyer = notifyer;
+
+            _userDal = new User(dbHelper);
         }
 
 
@@ -31,9 +37,11 @@ namespace CS.MsgServiceDemo
         {
             _logger.Info("Receive msg:" + msg);
 
-            var data = _dbHelper.ExecuteSql<String>("select * from table");
+            String sql = StringUtil.SqlTrim("select * from table   ");
 
-            _notifyer.Notify("通知：" + msg);
+            var data = _userDal.GetUserName(1);
+
+            _notifyer.Notify("通知：" + sql + data);
 
 
         }

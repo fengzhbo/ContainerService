@@ -28,11 +28,7 @@ namespace CS.ServiceMananger
             //    Assembly.LoadFrom(
             //        @"C:\Users\fengzhbo\Documents\GitHubVisualStudio\ContainerService\ContainerService\CS.MsgServiceDemo\bin\Debug\CS.MsgServiceDemo.dll");
 
-            IocBuilder = new ContainerBuilder();
-
-            IocBuilder.RegisterType<ConsoleLogger>().As<ILogger>();
-            IocBuilder.RegisterType<ConsoleDbHelper>().As<IDbHelper>();
-            IocBuilder.RegisterType<ConsoleNotifyer>().As<INotifyer>();
+            IocBuilder = IocBuilder ?? new ContainerBuilder();
 
             var assembly = Assembly.LoadFrom(path);
 
@@ -45,7 +41,30 @@ namespace CS.ServiceMananger
             iocContainer = IocBuilder.Build();
         }
 
-        public static void InitService()
+        public static void LoadService()
+        {
+            //var ad = AppDomain.CreateDomain("ServiceDemo", null, null);
+
+            //ad.CreateComInstanceFrom(@"C:\Users\fengzhbo\Documents\GitHubVisualStudio\ContainerService\ContainerService\load", "");
+
+            ////var assembly =
+            //    Assembly.LoadFrom(
+            //        @"C:\Users\fengzhbo\Documents\GitHubVisualStudio\ContainerService\ContainerService\CS.MsgServiceDemo\bin\Debug\CS.MsgServiceDemo.dll");
+
+            IocBuilder = IocBuilder ?? new ContainerBuilder();
+
+            var assembly = AppDomain.CurrentDomain.GetAssemblies();
+
+            IocBuilder.RegisterAssemblyTypes()
+                .Where(t => t.IsSubclassOf(typeof(IService)))
+                //.Where(t => t.Name.EndsWith("Service"))
+                // .Named<IService>("")
+                .As<IService>();
+
+            iocContainer = IocBuilder.Build();
+        }
+
+        static ServiceLoader()
         {
             IocBuilder = new ContainerBuilder();
 
@@ -53,7 +72,7 @@ namespace CS.ServiceMananger
             IocBuilder.RegisterType<ConsoleDbHelper>().As<IDbHelper>();
             IocBuilder.RegisterType<ConsoleNotifyer>().As<INotifyer>();
 
-            iocContainer = IocBuilder.Build();
+            //iocContainer = IocBuilder.Build();
         }
 
         public static IService ResolveService()

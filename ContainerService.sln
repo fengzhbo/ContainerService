@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.ServiceMananger", "CS.ServiceMananger\CS.ServiceMananger.csproj", "{5CCF027E-2CD8-4FEC-AA4A-C3B5A493D3A4}"
 EndProject
@@ -12,6 +12,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicConsoleComponent", "BasicConsoleComponent\BasicConsoleComponent.csproj", "{FC618459-23BF-4AD7-8AF1-2FCAD25BA428}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.ConsoleTest", "CS.ConsoleTest\CS.ConsoleTest.csproj", "{51B48F58-307D-4185-A2A5-FB4E3D31661B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestServiceDemo", "TestServiceDemo", "{56C98C4A-67D3-4004-B4C7-0B97EC62A035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.MsgServiceDemoDAL", "CS.MsgServiceDemoDAL\CS.MsgServiceDemoDAL.csproj", "{A8FCEE73-94B7-4F45-9AA4-1AC32B72E882}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.MsgServiceDemo.Common", "CS.MsgServiceDemo.Common\CS.MsgServiceDemo.Common.csproj", "{0F5FEBBC-3ABE-4C31-8A5B-F2797BBB94B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +45,21 @@ Global
 		{51B48F58-307D-4185-A2A5-FB4E3D31661B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51B48F58-307D-4185-A2A5-FB4E3D31661B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51B48F58-307D-4185-A2A5-FB4E3D31661B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8FCEE73-94B7-4F45-9AA4-1AC32B72E882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8FCEE73-94B7-4F45-9AA4-1AC32B72E882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8FCEE73-94B7-4F45-9AA4-1AC32B72E882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8FCEE73-94B7-4F45-9AA4-1AC32B72E882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5FEBBC-3ABE-4C31-8A5B-F2797BBB94B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5FEBBC-3ABE-4C31-8A5B-F2797BBB94B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5FEBBC-3ABE-4C31-8A5B-F2797BBB94B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5FEBBC-3ABE-4C31-8A5B-F2797BBB94B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E1AF2FA5-A0C1-4A2C-AE06-794F31EA3976} = {56C98C4A-67D3-4004-B4C7-0B97EC62A035}
+		{A8FCEE73-94B7-4F45-9AA4-1AC32B72E882} = {56C98C4A-67D3-4004-B4C7-0B97EC62A035}
+		{0F5FEBBC-3ABE-4C31-8A5B-F2797BBB94B7} = {56C98C4A-67D3-4004-B4C7-0B97EC62A035}
 	EndGlobalSection
 EndGlobal

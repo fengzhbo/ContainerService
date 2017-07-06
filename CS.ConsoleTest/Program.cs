@@ -12,18 +12,16 @@ namespace CS.ConsoleTest
     {
         static void Main(string[] args)
         {
-            ServiceLoader.InitService();
 
+            ServiceLoader.LoadService(@"E:\gitproject\ServiceContainer\CS.MsgServiceDemo\bin\Debug\CS.MsgServiceDemo.dll");
+
+            //ServiceLoader.LoadService();
 
             var service = ServiceLoader.ResolveService();
 
             executeService(service);
 
-            ServiceLoader.LoadService(@"C:\Users\fengzhbo\Documents\GitHubVisualStudio\ContainerService\ContainerService\CS.MsgServiceDemo\bin\Debug\CS.MsgServiceDemo.dll");
-
-            service = ServiceLoader.ResolveService();
-
-            executeService(service);
+            Console.ReadLine();
 
         }
 
